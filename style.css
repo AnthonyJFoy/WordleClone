@@ -1,0 +1,111 @@
+* { /*- '*' means all styling, use this to set overall CSS */
+    color: #ffffff;
+    font-family: 'Trebuchet MS' , 'Lucida Sans Unicode' , 'Lucida Grande' , 'Lucida Sans' , Arial, sans-serif;
+}
+
+
+body {
+    background-color: #121213;
+}
+
+.game-container {
+    height: 90vh; /* 'vh' essentially percent */
+    display: flex; /* makes things stack */
+    flex-direction: column; /* makes things stack */
+    justify-content: space-between; /* Everything needs space between (Will not work without height)*/
+    align-items: center;
+}
+
+
+.title-container { /*- '.' Targets a class */
+    text-align: center;
+    width: 510px;
+    border-bottom: solid 1px #3a3a3c;
+}
+
+.tile-container {
+    width: 330px;
+    margin-bottom: 30px;
+}
+
+.key-container {
+    width: 510px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.key-container button {
+    width: 43px;
+    height: 58px;
+    border-radius: 4px;
+    border: none;
+    background-color: #818384;
+    margin: 4px;
+}
+
+.key-container button:nth-child(11){ /* changes margin of 11th button */
+    margin-left: 30px;
+}
+.key-container button:nth-child(20), /* changes width of 20th and 28th buttons */
+.key-container button:nth-child(28) {
+    width: 68px;
+}
+
+.tile-container div {
+    display: flex; /* makes the tiles ordered as opposed to in a downward row */
+}
+
+.tile-container .tile { /* anything in tile container with a class of tile */
+    width: 62px;
+    height: 62px;
+    border: 2px solid #3a3a3c;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;
+}
+
+.message-container {
+    height: 30px;
+}
+
+.message-container p { /* styling for the <p> created for message-container */
+    background-color: #818384;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0;
+}
+
+.tile.flip {
+    animation: 0.5s linear flipping; /* defined below */
+}
+
+@keyframes flipping {
+    0% {
+        transform: rotateX(0deg);
+    }
+    50% {
+        transform: rotateY(90deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+
+.grey-overlay {
+    background-color: #3a3a3c !important;
+    border: none !important; /* !important will overwrite any other styling, border: none removes border to make the square a solid colour */
+}
+
+.yellow-overlay {
+    background-color: #b59f3a !important;
+    border: none !important; /* !important will overwrite any other styling */
+}
+
+.green-overlay {
+    background-color: #538d4e !important;
+    border: none !important; /* !important will overwrite any other styling */
+}
+
